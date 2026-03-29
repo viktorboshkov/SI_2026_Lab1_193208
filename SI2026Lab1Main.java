@@ -44,6 +44,7 @@ class Book {
 }
 
 class Library {
+
     private List<Book> books;
 
     public Library() {
@@ -54,7 +55,6 @@ class Library {
         books.add(book);
     }
 
-    
     public boolean searchBookByTitle(String title) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
@@ -133,7 +133,13 @@ public class SI2026Lab1Main {
         System.out.println("Library initialized.\n");
 
         System.out.println("Searching books:");
-        System.out.println(library.searchBookByTitle("Clean Code"));   // true
-        System.out.println(library.searchBookByTitle("Harry Potter")); // false
+        System.out.println(library.searchBookByTitle("Clean Code"));
+        System.out.println(library.searchBookByTitle("Harry Potter"));
+
+        System.out.println("\nGenre report (Programming):");
+        library.printBooksByGenre("Programming");
+
+        System.out.println("\nGenre report (Fantasy):");
+        library.printBooksByGenre("Fantasy");
     }
 }
