@@ -36,7 +36,10 @@ class Book {
 
     @Override
     public String toString() {
-        return "Title: " + title + ", Author: " + author + ", Genre: " + genre + ", Borrowed: " + borrowed;
+        return "Title: " + title +
+                ", Author: " + author +
+                ", Genre: " + genre +
+                ", Borrowed: " + borrowed;
     }
 }
 
@@ -51,12 +54,16 @@ class Library {
         books.add(book);
     }
 
-    // TODO: Implement in branch feature-search-books
+    
     public boolean searchBookByTitle(String title) {
+        for (Book book : books) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                return true;
+            }
+        }
         return false;
     }
 
-    // TODO: Implement in branch feature-borrow-book
     public void borrowBook(String title) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
@@ -87,8 +94,12 @@ class Library {
         System.out.println("Book not found.");
     }
 
-    // TODO: Implement in branch feature-genre-report
     public void printBooksByGenre(String genre) {
+        for (Book book : books) {
+            if (book.getGenre().equalsIgnoreCase(genre)) {
+                System.out.println(book);
+            }
+        }
     }
 
     public int countAvailableBooks() {
@@ -119,6 +130,10 @@ public class SI2026Lab1Main {
         library.addBook(new Book("The Hobbit", "J.R.R. Tolkien", "Fantasy"));
         library.addBook(new Book("1984", "George Orwell", "Dystopian"));
 
-        System.out.println("Library initialized.");
+        System.out.println("Library initialized.\n");
+
+        System.out.println("Searching books:");
+        System.out.println(library.searchBookByTitle("Clean Code"));   // true
+        System.out.println(library.searchBookByTitle("Harry Potter")); // false
     }
 }
