@@ -44,6 +44,7 @@ class Book {
 }
 
 class Library {
+
     private List<Book> books;
 
     public Library() {
@@ -135,8 +136,14 @@ public class SI2026Lab1Main {
         System.out.println(library.searchBookByTitle("Clean Code"));
         System.out.println(library.searchBookByTitle("Harry Potter"));
 
-        System.out.println("\nTesting borrowBook:");
-        library.borrowBook("Clean Code");
-        library.borrowBook("Clean Code");
-    }
+	System.out.println("\nTesting borrowBook:");
+	library.borrowBook("Clean Code");
+	library.borrowBook("Clean Code");
+
+	System.out.println("\nGenre report (Programming):");
+	library.printBooksByGenre("Programming");
+
+	System.out.println("\nGenre report (Fantasy):");
+	library.printBooksByGenre("Fantasy");
+ }
 }
