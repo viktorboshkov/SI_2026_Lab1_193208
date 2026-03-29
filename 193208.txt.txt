@@ -1,0 +1,27 @@
+git branch feature-search-books
+git checkout feature-search-books
+git add .
+git commit -m "Implement book search"
+git push origin feature-search-books
+git checkout master
+git merge feature-search-books
+git push origin master
+git log --oneline --graph --all
+
+Овде се гледа крајниот request на log
+
+* cdfe4c1 (HEAD -> master, origin/master, origin/feature-search-books, feature-search-books) Implement book search
+* 93705c1 Add starter code
+* b15f920 Initial commit
+
+
+
+The merge was not a fastforward merge because the feature branch had separate commits before being merged into master
+--
+
+Two new branches were created from master:
+
+- feature-borrow-book
+- feature-genre-report
+
+Each branch was created using git checkout -b command
