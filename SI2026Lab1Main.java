@@ -54,7 +54,6 @@ class Library {
         books.add(book);
     }
 
-    // SEARCH BOOK
     public boolean searchBookByTitle(String title) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
@@ -64,7 +63,6 @@ class Library {
         return false;
     }
 
-    // BORROW BOOK (UPDATED MESSAGE)
     public void borrowBook(String title) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
@@ -131,16 +129,14 @@ public class SI2026Lab1Main {
         library.addBook(new Book("The Hobbit", "J.R.R. Tolkien", "Fantasy"));
         library.addBook(new Book("1984", "George Orwell", "Dystopian"));
 
-        System.out.println("Library initialized.\n");
+        System.out.println("Library initialized.");
 
-        // SEARCH TEST
         System.out.println("Searching books:");
-        System.out.println(library.searchBookByTitle("Clean Code"));   // true
-        System.out.println(library.searchBookByTitle("Harry Potter")); // false
+        System.out.println(library.searchBookByTitle("Clean Code"));
+        System.out.println(library.searchBookByTitle("Harry Potter"));
 
-        // BORROW TEST
         System.out.println("\nTesting borrowBook:");
         library.borrowBook("Clean Code");
-        library.borrowBook("Clean Code"); // test already borrowed
+        library.borrowBook("Clean Code");
     }
 }
