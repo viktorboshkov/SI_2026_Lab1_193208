@@ -54,7 +54,7 @@ class Library {
         books.add(book);
     }
 
-    
+    // SEARCH (не е дел од оваа задача, ама оставено)
     public boolean searchBookByTitle(String title) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
@@ -64,12 +64,13 @@ class Library {
         return false;
     }
 
+   
     public void borrowBook(String title) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
                 if (!book.isBorrowed()) {
                     book.setBorrowed(true);
-                    System.out.println("Book borrowed.");
+                    System.out.println("Borrowed successfully");
                 } else {
                     System.out.println("Book is already borrowed.");
                 }
@@ -130,10 +131,11 @@ public class SI2026Lab1Main {
         library.addBook(new Book("The Hobbit", "J.R.R. Tolkien", "Fantasy"));
         library.addBook(new Book("1984", "George Orwell", "Dystopian"));
 
-        System.out.println("Library initialized.\n");
+        System.out.println("Library initialized.");
 
-        System.out.println("Searching books:");
-        System.out.println(library.searchBookByTitle("Clean Code"));   // true
-        System.out.println(library.searchBookByTitle("Harry Potter")); // false
+        
+        System.out.println("\nTesting borrowBook:");
+        library.borrowBook("Clean Code");
+        library.borrowBook("Clean Code"); // test already borrowed
     }
 }
