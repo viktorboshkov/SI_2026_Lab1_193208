@@ -1,0 +1,13 @@
+*   9edd4cf Resolve merge conflict and combine features
+|\  
+| * f3f018e Implement genre report
+* |   f96bf53 Resolve merge conflict
+|\ \  
+| * | bc7fcc5 Update borrow message on master
+| * | 2aa6ec4 Implement borrow book
+| |/  
+* / 1b37015 Implement borrow book
+|/  
+* cdfe4c1 Implement book search
+* 93705c1 Add starter code
+* b15f920 Initial commit
